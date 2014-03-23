@@ -30,5 +30,10 @@
         <input type="button" value="remove observer" onclick="removeIdleObserver()" />
         <div id="output">
         </div>
+        <script>
+            for (var obj in navigator) {
+                if (obj) output(obj);
+            }
+        </script>
     </body>
 </html>
