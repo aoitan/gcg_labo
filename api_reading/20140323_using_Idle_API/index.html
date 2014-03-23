@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using Idle API Sample</title>
+        <script>
+            var idle = {
+                time: 10,
+                onidle: function () { output("onidle"); },
+                onactive: function () { output("onactive"); }
+            };
+            function output(message) {
+                var o = document.getElementById("output");
+                var p = document.createElement("p");
+                p.innerHTML = message;
+                o.appendChild(p);
+            }
+            function setIdleObserver() {
+                output("setIdleObserver");
+                navigator.addIdleObserver(idle);
+            }
+            function removeIdleObserver() {
+                output("removeIdleObserver");
+                navigator.removeIdleObserver(idle);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="add observer" onclick="setIdleObserver()" />
+        <input type="button" value="remove observer" onclick="removeIdleObserver()" />
+        <div id="output">
+        </div>
+    </body>
+</html>
