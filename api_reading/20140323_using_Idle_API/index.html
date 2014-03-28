@@ -5,7 +5,7 @@
         <title>Using Idle API Sample</title>
         <script>
             var idle = {
-                time: 10,
+                time: 3,
                 onidle: function () { output("onidle"); },
                 onactive: function () { output("onactive"); }
             };
@@ -14,26 +14,26 @@
                 var p = document.createElement("p");
                 p.innerHTML = message;
                 o.appendChild(p);
+                console.debug(message);
             }
             function setIdleObserver() {
                 output("setIdleObserver");
-                navigator.addIdleObserver(idle);
+                if (navigator.addIdleObserver) {
+                    navigator.addIdleObserver(idle);
+                }
             }
-            function removeIdleObserver() {
-                output("removeIdleObserver");
-                navigator.removeIdleObserver(idle);
+            function unsetIdleObserver() {
+                output("unsetIdleObserver");
+                if (navigator.removeIdleObserver) {
+                    navigator.removeIdleObserver(idle);
+                }
             }
         </script>
     </head>
     <body>
         <input type="button" value="add observer" onclick="setIdleObserver()" />
-        <input type="button" value="remove observer" onclick="removeIdleObserver()" />
+        <input type="button" value="remove observer" onclick="unsetIdleObserver()" />
         <div id="output">
         </div>
-        <script>
-            for (var obj in navigator) {
-                if (obj) output(obj);
-            }
-        </script>
     </body>
 </html>
