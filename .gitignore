@@ -1,3 +1,5 @@
 /api_reading/20140323_using_Idle_API/*.webapp~
 /api_reading/20140323_using_Idle_API/*.html~
 /api_reading/20140323_using_Idle_API/*.swp
+*.swp
+*.html~
