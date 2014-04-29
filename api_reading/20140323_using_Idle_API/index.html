@@ -14,21 +14,34 @@
                 var p = document.createElement("p");
                 p.innerHTML = message;
                 o.appendChild(p);
+                console.log(message);
             }
             function setIdleObserver() {
                 output("setIdleObserver");
-                navigator.addIdleObserver(idle);
+                try {
+                    navigator.addIdleObserver(idle);
+                } catch (e) {
+                    output("error addIdleObserver: " + e);
+                }
             }
             function removeIdleObserver() {
                 output("removeIdleObserver");
-                navigator.removeIdleObserver(idle);
+                try {
+                    navigator.removeIdleObserver(idle);
+                } catch (e) {
+                    output("error removeIdleObserver: " + e);
+                }
             }
         </script>
     </head>
     <body>
         <input type="button" value="add observer" onclick="setIdleObserver()" />
         <input type="button" value="remove observer" onclick="removeIdleObserver()" />
-        <div id="output">
-        </div>
+        <div id="output"></div>
+        <script>
+            for (var obj in navigator) {
+                output(obj);
+            }
+        </script>
     </body>
 </html>
