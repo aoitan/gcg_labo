@@ -1,0 +1,18 @@
+{
+  "name": "using Page Visibility API",
+  "description": "using Page Visibility API Sample",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/images/app_icon_128.png",
+     "60": "/images/app_icon_60.png"
+  },
+  "version": "1.0",
+  "developer": {
+    "name": "YABUSHITA Masami",
+    "url": "http://www.gcg.bz/labo_blog/?author=2"
+  },
+  "default_locale": "en"
+}
+
+
+
