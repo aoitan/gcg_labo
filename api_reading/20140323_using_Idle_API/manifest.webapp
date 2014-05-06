@@ -12,6 +12,9 @@
     "url": "http://www.gcg.bz/labo_blog/?author=2"
   },
   "type": "certified",
+  "permissions": {
+    "idle": {}
+  },
   "default_locale": "en"
 }
 
