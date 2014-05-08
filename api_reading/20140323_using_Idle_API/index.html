@@ -3,36 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>Using Idle API Sample</title>
-        <script>
-            var idle = {
-                time: 3,
-                onidle: function () { output("onidle"); },
-                onactive: function () { output("onactive"); }
-            };
-            function output(message) {
-                var o = document.getElementById("output");
-                var p = document.createElement("p");
-                p.innerHTML = message;
-                o.appendChild(p);
-                console.debug(message);
-            }
-            function setIdleObserver() {
-                output("setIdleObserver");
-                if (navigator.addIdleObserver) {
-                    navigator.addIdleObserver(idle);
-                }
-            }
-            function unsetIdleObserver() {
-                output("unsetIdleObserver");
-                if (navigator.removeIdleObserver) {
-                    navigator.removeIdleObserver(idle);
-                }
-            }
+        <script src="idle_test.js">
         </script>
     </head>
     <body>
-        <input type="button" value="add observer" onclick="setIdleObserver()" />
-        <input type="button" value="remove observer" onclick="unsetIdleObserver()" />
+        <input id="add" type="button" value="add observer" />
+        <input id="remove" type="button" value="remove observer" />
         <div id="output">
         </div>
     </body>
