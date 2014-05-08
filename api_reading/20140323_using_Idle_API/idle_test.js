@@ -30,7 +30,7 @@ function init() {
     var addButton = document.getElementById('add');
     addButton.addEventListener('click', setIdleObserver);
     var removeButton = document.getElementById('remove');
-    removeButton.removeEventListener('click', unsetIdleObserver);
+    removeButton.addEventListener('click', unsetIdleObserver);
 }
 
 window.onload = init;
